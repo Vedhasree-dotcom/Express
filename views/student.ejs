@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Students List: </h1>
+
+    <a href="/users/new" class="btn add-btn">Add Student</a>
+
+    <ul class="list">
+        <% students.forEach(function(student) { %>
+            <li class="list-item">
+                <span>Name: <%= student.name %></span><br/><br/>
+                <span>Email:  <%= student.email %></span><br/><br/>
+                <span>Age:  <%= student.age %></span><br/><br/>
+            
+            <span class="actions">
+              <a href="/users/edit/<%= student._id %>" class="edit-btn"> 
+                Edit </a>
+
+
+            <form action="/users/delete/<%= student._id %>" 
+                method="POST">
+            <button type="submit">Delete</button>
+            </form>
+
+            </span>
+            </li>
+        <% }); %>
+    </ul>
+    </div>
+</body>
+</html>

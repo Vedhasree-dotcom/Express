@@ -1,0 +1,23 @@
+<!-- Here also include the layout file to maintain consistent design across pages. -->
+<%- include("layout") %> 
+
+<h2>Edit product</h2>
+
+<form action="/product/edit" method="POST" enctype="multipart/form-data">
+    <label>Name:</label><br>
+    <input type="text" name="name" value="<%= product.name %>" required><br><br>
+
+    <label>Price:</label><br>
+    <input type="number" name="price" value="<%= product.price %>" required><br><br>
+
+    <label>Description:</label><br>
+    <textarea name="description"><%= product.description %></textarea><br><br>
+
+    <label>Current Image:</label>
+    <img src="/uploads/<%= product.image %>" width="100" alt="">
+
+    <label>Upload New Image:</label><br>
+    <input type="file" name="image"><br><br>
+
+    <button type="submit">Update</button>
+</form>

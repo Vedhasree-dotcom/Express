@@ -1,0 +1,32 @@
+<!-- For include the layout and display product list 
+ with image, name, price, description. -->
+
+<%- include("layout") %>  
+
+<h1 style="text-align: center;">Product List</h1>
+
+<table border="1" cellpadding="20" style="margin: 20px 380px; width: 50%;">
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    <% products.forEach(product => { %>
+    <tr>
+        <!-- images are store in uploads folder in server -->
+        <td><img src="/uploads/<%=product.image %>" width="80" ></td>
+        <td><%= product.name %></td>
+        <td>₹ <%= product.price %></td>
+        <td><%= product.description %></td>
+        <td>
+            <a href="product/edit/<%= product._id %>">Edit</a>
+
+            
+            <a href="/product/delete/<%= product._id %>">Delete</a>
+        </td>
+    </tr>
+    <% }) %>
+
+</table>

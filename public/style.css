@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(217, 126, 95);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 50px 100px;
+    color: rgb(11, 11, 11);
+    
+}
+.list{
+    background-color: rgb(229, 232, 17);
+}
+.list-item{
+    padding:30px;
+    font-size: 18px;
+}
