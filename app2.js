@@ -132,19 +132,7 @@ app2.post('/users/delete/:id', async (req, res) => {
 });
 
 
-// Delete product route
-// app2.get('/product/delete/:id', async (req, res) => {
-//     try {
-//         console.log("Deleting ID:", req.params.id);
 
-//         await Product.findByIdAndDelete(req.params.id);
-
-//         res.redirect('/product');
-//     } catch (err) {
-//         console.error(err);
-//         res.status(400).send("Delete failed");
-//     }
-// });
 
 
 

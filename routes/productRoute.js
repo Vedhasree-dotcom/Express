@@ -31,11 +31,11 @@ router.get("/add", productController.addForm);
 router.post("/add", upload.single('image'), productController.addProduct);
 
 router.get("/edit/:id", productController.editForm);
-router.post("edit/:id", upload.single('image'), productController.updateProduct);
 
+router.post("/edit/:id", upload.single('image'), productController.updateProduct);
 
-router.get("/delete/:id", productController.deleteProduct); // function in productController to delete
-
+// function in productController to delete
+router.get("/delete/:id", productController.deleteProduct); 
 
 
 // Export the router
