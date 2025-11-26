@@ -4,7 +4,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const User = require('./Mongoose/Models/User');  //import user model
-// const Product = require('./Mongoose/Models/Product');  //import product model
 
 
 // import product routes
