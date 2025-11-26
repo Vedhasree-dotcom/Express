@@ -14,7 +14,9 @@ const app2 = express();
 
 const PORT = 3001;
 
-app2.use(express.json()); // Middleware to parse JSON 
+// Middlewares is a function that uses between req and res 
+// Middleware to parse JSON 
+app2.use(express.json()); 
 
 // MongoDB connection string
 const mongoURL = 'mongodb://localhost:27017/mydatabase';
@@ -38,6 +40,13 @@ app2.use(express.static('public'));
 
 // Serve uploaded files statically
 app2.use('/uploads', express.static('uploads')); 
+
+
+// middleware to give requested url and it's method
+app2.use((req, res, next) => {
+    console.log(`Request URL: ${req.url}, Method: ${req.method}`);
+    next(); // next-> Pass control to next middleware or route
+});
 
 
 // Set EJS as the templating engine
