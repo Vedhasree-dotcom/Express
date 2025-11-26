@@ -4,7 +4,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const User = require('./Mongoose/Models/User');  //import user model
-const Product = require('./Mongoose/Models/Product');  //import product model
+// const Product = require('./Mongoose/Models/Product');  //import product model
 
 
 // import product routes
@@ -119,6 +119,7 @@ app2.post('/users/update/:id', async (req, res) => {
 });
 
 
+
 // Delete user route
 app2.post('/users/delete/:id', async (req, res) => {
     try {
@@ -132,18 +133,18 @@ app2.post('/users/delete/:id', async (req, res) => {
 
 
 // Delete product route
-app2.get('/product/delete/:id', async (req, res) => {
-    try {
-        console.log("Deleting ID:", req.params.id);
+// app2.get('/product/delete/:id', async (req, res) => {
+//     try {
+//         console.log("Deleting ID:", req.params.id);
 
-        await Product.findByIdAndDelete(req.params.id);
+//         await Product.findByIdAndDelete(req.params.id);
 
-        res.redirect('/product');
-    } catch (err) {
-        console.error(err);
-        res.status(400).send("Delete failed");
-    }
-});
+//         res.redirect('/product');
+//     } catch (err) {
+//         console.error(err);
+//         res.status(400).send("Delete failed");
+//     }
+// });
 
 
 

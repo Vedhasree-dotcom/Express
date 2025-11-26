@@ -20,10 +20,20 @@ module.exports = {
         res.redirect("/product");
 
     },
-    
+
     editForm: async (req, res) => {
         const product = await Product.findById(req.params.id);
         res.render("editProduct", {product});
+    },
+    
+    updateProduct: async (req, res) => {
+        const {name, price, description } = req.body;
+        let updateData = {name, price, description };
+
+        if(req.file) updateData.image = req.file.filename;
+
+        await Product.findByIdAndUpdate(req.params.id, updateData);
+        res.redirect("/product");
     },
 
     deleteProduct: async (req, res) => {

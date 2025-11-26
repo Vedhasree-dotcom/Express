@@ -30,7 +30,10 @@ router.get("/add", productController.addForm);
 // single is the multer function to upload a single file
 router.post("/add", upload.single('image'), productController.addProduct);
 
-router.get("/edit/:id", productController.editProduct);
+router.get("/edit/:id", productController.editForm);
+router.post("edit/:id", upload.single('image'), productController.updateProduct);
+
+
 router.get("/delete/:id", productController.deleteProduct); // function in productController to delete
 
 
